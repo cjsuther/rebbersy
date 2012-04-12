@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</head> 
+<body> 
+
+<div data-role="page" class="page-map">
+	<script>
+		$( '.page-map' ).live( 'pageinit',function(event){
+			var m_height = $(window).height()-$('#footer').height()-$('#header').height();
+			$('#map-canvas').css('height',m_height+'px');
+		});
+		
+	</script>
+	<div data-role="header" data-position="fixed" id="header">
+		<h1>My Title</h1>
+		<a href="" data-icon="gear" class="ui-btn-right" id="gheigth">get Height</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<script src="map.js"></script>
+		<link rel="stylesheet" href="map.css" />
+		<div id="map-canvas" style="height:100%;">
+			<!-- map loads here... -->
+		</div>		
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-position="fixed" id="footer"> 
+		<h4>Footer content</h4> 
+	</div>
+</div><!-- /page -->
+
+</body>
+</html>
